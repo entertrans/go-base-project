@@ -1,4 +1,4 @@
-module github.com/username/go-base-project
+module github.com/entertrans/go-base-project.git
 
 go 1.24.0
 

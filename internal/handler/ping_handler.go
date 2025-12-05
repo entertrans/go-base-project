@@ -1,23 +1,22 @@
 package handler
 
 import (
-    "net/http"
+	"net/http"
 
-    "github.com/username/go-base-project/pkg/response"
-
-    "github.com/gin-gonic/gin"
+	"github.com/entertrans/go-base-project.git/pkg/response"
+	"github.com/gin-gonic/gin"
 )
 
 type PingHandler interface {
-    Ping(c *gin.Context)
+	Ping(c *gin.Context)
 }
 
 type pingHandler struct{}
 
 func NewPingHandler() PingHandler {
-    return &pingHandler{}
+	return &pingHandler{}
 }
 
 func (h *pingHandler) Ping(c *gin.Context) {
-    response.SendResponse(c, http.StatusOK, "pong", "Server is running")
+	response.SendResponse(c, http.StatusOK, "pong", "Server is running")
 }
